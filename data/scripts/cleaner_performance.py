@@ -14,11 +14,14 @@ Source sheets handled:
 """
 
 import re
+from pathlib import Path
+
 import pandas as pd
 import numpy as np
 from openpyxl import load_workbook
 
-EXCEL_FILE = "/home/prasanga/projects/mcp/data/6. SCT_Financial Performance Report_Upto Poush End, 2082.xlsx"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+EXCEL_FILE = PROJECT_ROOT / "data" / "6. SCT_Financial Performance Report_Upto Poush End, 2082.xlsx"
 
 # A sheet is considered "derived" when at least this fraction of its
 # non-empty cells are formulas referencing OTHER sheets. The four

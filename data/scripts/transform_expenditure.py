@@ -5,9 +5,12 @@ IGNORE_PREFIXES = {
 import pandas as pd
 from pathlib import Path
 
-from cleaner_performance import clean_part_sheet, EXCEL_FILE
+try:
+    from data.scripts.cleaner_performance import clean_part_sheet, EXCEL_FILE, PROJECT_ROOT
+except ModuleNotFoundError:
+    from cleaner_performance import clean_part_sheet, EXCEL_FILE, PROJECT_ROOT
 
-OUTPUT_DIR = Path("data/processed/Performance")
+OUTPUT_DIR = PROJECT_ROOT / "data" / "processed" / "Performance"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 METRICS = {
