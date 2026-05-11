@@ -39,3 +39,6 @@ data/*.csv
 # Logs & temp
 *.log
 *.tmp
+
+
+.env
