@@ -1,0 +1,1 @@
+"""Financial MCP server package."""
